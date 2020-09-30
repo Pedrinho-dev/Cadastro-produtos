@@ -5,15 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Produtos</title>
-
-    <script src='impl/js/cadastro.js'></script>
-    <script src='impl/js/manager.js'></script>
-    <script src='impl/js/controller.js'></script>
+    <link rel="stylesheet" href="impl/css/produto.css">
 </head>
 
 <body>
-
-    <!-- componentes de tela -->
+    <div class='container'>
+        <h2>Cadastro de Produtos</h2>
+        <div>
+            <input id="nome" type='text' placeholder="Nome do produto">
+            <input id="preco" type="number" placeholder="Preço">
+            <button onclick="controller.aoClicarCadastrar()">Adicionar</button>
+        </div>
+        <div>
+            <button>Ordenar Menor Preço</button>
+            <button>Ordenar Maior Preço</button>
+            <button>Ordem Alfabética</button>
+            <div><input type="number" placeholder="Preço de Referência"></div>
+            <button>Mais Barato que</button>
+            <button>Mais Caro que</button>
+        </div>
+        <hr>
+        <div id="novoProduto"></div>
+    </div>
+    <script src='impl/js/produto.js'></script>
+    <script src='impl/js/manager.js'></script>
+    <script src='impl/js/controller.js'></script>
 </body>
 
 </html>

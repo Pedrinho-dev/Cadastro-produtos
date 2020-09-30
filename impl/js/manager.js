@@ -1,11 +1,11 @@
 class ProdutoManager {
 
     constructor() {
-        this.produtos = []
+        this.arrProdutos = []
     }
 
     cadastrar(produto) {
-        //adicionar no array
+        this.arrProdutos.push(produto)
     }
 
     ordenarPorPrecoMaisBaratos() {
