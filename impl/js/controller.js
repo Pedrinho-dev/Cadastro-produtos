@@ -10,16 +10,13 @@ class Controller {
     }
 
     exibirNovoProduto() {
-        
-            let arr = this.produtoManager.arrProdutos
-            let saida = ''
-            for (let i = 0; i < arr.length; i++) {
-                saida += `<div>Produto: ${arr[i].nome}</div>
-                <div>Preço: R$ ${arr[i].preco},00</div><hr>`
-            }
-            document.getElementById('novoProduto').innerHTML = saida
-        
-      
+        let arr = this.produtoManager.arrProdutos
+        let saida = ''
+        for (let i = 0; i < arr.length; i++) {
+            saida += `<div>Produto: ${arr[i].nome}</div>
+                <div>Preço: ${arr[i].preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</div><hr>`
+        }
+        document.getElementById('novoProduto').innerHTML = saida
     }
     limparCampos() {
         document.getElementById('nome').value = ''
@@ -37,13 +34,13 @@ class Controller {
         this.limparCampos()
         document.getElementById('nome').focus()
     }
-    ordenarPorPrecoMaisBarato(){
-        this.produtoManager.ordenarPorPrecoMaisBarato();        
+    ordenarPorPrecoMaisBarato() {
+        this.produtoManager.ordenarPorPrecoMaisBarato();
         this.exibirNovoProduto()
     }
 
     ordenarPorPrecoMaisCaro() {
-        this.produtoManager.ordenarPorPrecoMaisCaro();        
+        this.produtoManager.ordenarPorPrecoMaisCaro();
         this.exibirNovoProduto()
     }
     //implementar methods para realizar as buscas e filtros
