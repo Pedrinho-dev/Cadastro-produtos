@@ -45,13 +45,24 @@ class ProdutoManager {
     ordenarPorNome() {
         //sort
         //retornar o array ordenado por nome
+       let arrOrdenados = this.arrProdutos.sort(
+           (p1,p2) => p1.nome < p2.nome ? -1 : 1
+        )
+
+        return arrOrdenados;
+    }   
+
+    buscarProdutosMaisBaratoQue(preco) {
+        let arrProdMaisBarato = this.arrProdutos.filter(
+            produto=>produto.preco < preco
+        );
+        return arrProdMaisBarato;
     }
-
-
-    
-
-    buscarProdutosMaisBaratosQue(preco) {
-        //filter
+    buscarProdutosMaisCaroQue(preco) {
+        let arrProdMaisCaro = this.arrProdutos.filter(
+            produto=>produto.preco > preco
+        );
+        return arrProdMaisCaro;
     }
 
     buscarProdutosMaisCarosQue(preco) {

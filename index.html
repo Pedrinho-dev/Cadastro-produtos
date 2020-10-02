@@ -4,32 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Produtos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">    
     <link rel="stylesheet" href="impl/css/produto.css">
+    <title>Cadastro Produtos</title>
 </head>
 
 <body>
-    <div class='container'>
-        <h2>Cadastro de Produtos</h2>
-        <div>
-            <input id="nome" type='text' placeholder="Nome do produto">
-            <input id="preco" type="number" placeholder="Preço">
-            <button onclick="controller.aoClicarCadastrar()">Adicionar</button>
-        </div>
-        <div>
-            <button onclick="controller.ordenarPorPrecoMaisBarato()">Ordenar Menor Preço</button>
-            <button onclick="controller.ordenarPorPrecoMaisCaro()">Ordenar Maior Preço</button>
-            <button>Ordem Alfabética</button>
-            <div><input type="number" placeholder="Preço de Referência"></div>
-            <button>Mais Barato que</button>
-            <button>Mais Caro que</button>
-        </div> 
+    <div class='container mt-3'>
+        <h2 >Cadastro de Produtos</h2>
         <hr>
-        <div id="novoProduto"></div>
+        <div class="row text-center">            
+                <input id="nome" class="form-control mb-1" type='text' placeholder="Nome do produto">
+                <input id="preco" class="form-control mb-1" type="number" placeholder="Preço">                
+        </div>        
+        <div class="row">
+            <div class=" btn-group col-sm-12 col-mb-6 ml-0.1">
+                <button class="btn btn-success" onclick="controller.aoClicarCadastrar()">Add</button>            
+                <button class="btn btn-info" onclick="controller.ordenarPorPrecoMaisBarato()">Menor Preço</button>
+                <button class="btn btn-info" onclick="controller.ordenarPorPrecoMaisCaro()">Maior Preço</button>
+                <button class="btn btn-info" onclick="controller.ordenarPorNome()">Alfabética</button>               
+                
+            </div>
+            <div class=" btn-group col-sm-12 col-mb-6 mt-2">
+                <button class="btn btn-info" onclick="controller.buscarProdPreco('maisBarato')">Mais Barato que</button>
+                <input id="valor" class="form-control" type="number"  placeholder="Preço de Referência">
+                <button class="btn btn-info" onclick="controller.buscarProdPreco('maisCaro')">Mais Caro que</button>                
+            </div>
+                      
+        </div> 
+        <hr class="bg-yellow">
+        <div class="container " id="novoProduto"></div>
     </div>
     <script src='impl/js/produto.js'></script>
     <script src='impl/js/manager.js'></script>
     <script src='impl/js/controller.js'></script>
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
